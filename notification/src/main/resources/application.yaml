@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: notification
+management:
+  endpoint:
+    enabled-by-default: false
+    info:
+      enabled: true
+    shutdown:
+      enabled: true
+logging:
+  level:
+    org.springframework.web: DEBUG
