@@ -22,7 +22,7 @@ public class SecurityConfig {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/login", "/oauth2/**", "/actuator/health").permitAll()
+                        .pathMatchers("/oauth2/**", "/actuator/health").permitAll()
                         .anyExchange().authenticated()
                 )
                 .oauth2Login(oauth2 -> oauth2
