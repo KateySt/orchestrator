@@ -1,6 +1,13 @@
 spring:
   application:
     name: gateway
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId:
+            clientSecret:
   cloud:
     gateway:
       server:
@@ -10,8 +17,8 @@ spring:
               enabled: true
               lower-case-service-id: true
           routes:
-            - id: user
-              uri: lb://USER
+            - id: product
+              uri: lb://PRODUCT
               predicates:
                 - Path=/api/**
               filters:

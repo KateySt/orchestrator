@@ -1,0 +1,34 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: product
+  kafka:
+    bootstrap-servers: localhost:9092
+  webflux:
+    static-path-pattern: "/resources/**"
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/orchestrator_db
+    username: orchestrator
+    password: orchestrator
+    POSTGRES_DB: orchestrator_db
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://localhost:5432/orchestrator_db
+    user: orchestrator
+    password: orchestrator
+    locations: classpath:db/migration
+paypal:
+  client-id:
+  client-secret:
+  mode: sandbox
+management:
+  endpoint:
+    enabled-by-default: false
+    info:
+      enabled: true
+    shutdown:
+      enabled: true
+logging:
+  level:
+    org.springframework.web: DEBUG
